@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\Webhook;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,8 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::get('/send-message', [TestController::class, 'sendMessage']);
-Route::get('/whatsapp-webhook', [TestController::class, 'verifyWebhook']);
-Route::post('/whatsapp-webhook', [TestController::class, 'processWebhook']);
